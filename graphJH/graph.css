@@ -1,0 +1,44 @@
+.container{
+    display : flex;
+    justify-content: center;
+    transform : rotate(180deg);
+}
+
+
+.wrap{
+    border : 1px solid #b0ffb6;
+    height : 400px;
+    width : 25px;
+    border-radius: 20px;
+    margin : 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+.wrap span{
+    position: absolute;
+    top : -22px;
+    transform : rotate(180deg);
+
+}
+
+.graph{
+    position: absolute;
+    left : 0;
+    top : 0;
+    bottom : 0;
+    height: 0;
+    width : 25px;
+    background-color: #b0ffb6;
+    border-radius: 20px;
+}
+
+.type{
+    display : flex;
+    justify-content: center;
+    position : absolute;
+    transform : rotate(180deg);
+    top : -50px;
+    width : 100px;
+}
