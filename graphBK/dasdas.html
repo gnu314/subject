@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function downloadCSV() {
+      var csvData = `region,year,month,cases
+jinju,2022,2,13498
+jinju,2022,1,668
+jinju,2021,12,581
+jinju,2021,11,107
+jinju,2021,10,72
+jinju,2021,9,110
+jinju,2021,8,173
+jinju,2021,7,129
+jinju,2021,6,54
+jinju,2021,5,118
+jinju,2021,4,306
+jinju,2021,3,433
+jinju,2021,2,13
+jinju,2021,1,178
+jinju,2020,12,118
+jinju,2020,11,75
+jinju,2020,10,1
+jinju,2020,9,2
+jinju,2020,8,2
+jinju,2020,5,2
+jinju,2020,4,2
+jinju,2020,3,6
+jinju,2020,2,2`;
+
+      var blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+      var link = document.createElement('a');
+      if (link.download !== undefined) {
+        var url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'data.csv');
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="downloadCSV()">CSV 파일 다운로드</button>
+</body>
+</html>

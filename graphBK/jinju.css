@@ -1,0 +1,43 @@
+
+    /* 날짜 레이블 스타일 */
+    .date-label {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #000;
+      }
+  
+      /* 그래프 컨테이너 스타일 */
+      #chart {
+        width: auto;
+        height: 600px;
+        margin: 20px auto;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        padding: 10px;
+        position: relative;
+      }
+  
+      /* 막대 스타일 */
+      .bar {
+        position: absolute;
+        bottom: 0;
+        width: 20px;
+        background-color: #2196F3;
+        transition: height 0.5s;
+      }
+  
+      /* 툴팁 스타일 */
+      .tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+      }

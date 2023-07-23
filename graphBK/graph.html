@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>확진자 수 막대 그래프</title>
+  <style>
+    .date-label {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+}
+
+    #chart {
+      width: auto;
+      height: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      position: relative;
+    }
+    .bar {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      background-color: #2196F3;
+      transition: height 0.5s;
+    }
+  </style>
+</head>
+<body>
+    <h1> 국내 코로나 확진자 월별 통계 과제</h1>
+  <div id="chart"></div>
+
+  <script>
+    // CSV 데이터를 불러와서 처리하는 함수
+   // CSV 데이터를 불러와서 처리하는 함수
+function processData(csv) {
+  var lines = csv.split("\n");
+  var data = [];
+  var maxValue = 0; // 최대값 변수 초기화
+
+  for (var i = 1; i < lines.length; i++) {
+    var parts = lines[i].split(",");
+    var region = parts[0];
+    var year = parseInt(parts[1]);
+    var month = parseInt(parts[2]);
+    var cases = parseInt(parts[3]);
+
+    data.push({ region: region, year: year, month: month, cases: cases });
+
+    if (cases > maxValue) {
+      maxValue = cases; // 최대값 업데이트
+    }
+  }
+
+  return { data: data, maxValue: maxValue }; // 데이터와 최대값 반환
+}
+
+
+   // 막대 그래프를 생성하는 함수
+function createChart(data, maxValue) {
+  var chartContainer = document.getElementById("chart");
+  var chartHeight = 400;
+
+  for (var i = 0; i < data.length; i++) {
+    var bar = document.createElement("div");
+    bar.className = "bar";
+    bar.style.height = ((data[i].cases / maxValue) * 100) + "%";
+    bar.style.left = (i * 50) + "px";
+    chartContainer.appendChild(bar);
+    var dateLabel = document.createElement("div");
+    dateLabel.className = "date-label";
+    dateLabel.innerText = data[i].year + "/" + data[i].month ;
+    bar.appendChild(dateLabel);
+
+
+
+    if ((data[i].cases / maxValue) < 0.1) {
+      bar.style.backgroundColor = "green"; // 10% 미만은 초록색
+    } else if ((data[i].cases / maxValue) >= 0.1 && (data[i].cases / maxValue) <= 0.5) {
+      bar.style.backgroundColor = "yellow"; // 10~30%는 노란색
+    } else if ((data[i].cases / maxValue) > 0.5) {
+      bar.style.backgroundColor = "red"; // 50%가 넘어가면 빨간색
+    }
+
+
+  }
+}
+
+// CSV 파일을 불러오는 함수
+function loadCSV(file) {
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+    if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+      var csvData = httpRequest.responseText;
+      var processedData = processData(csvData);
+      createChart(processedData.data, processedData.maxValue); // 수정된 반환값 사용
+    }
+  };
+  httpRequest.open("GET", file);
+  httpRequest.send();
+}
+
+
+    // CSV 파일 경로
+    var csvFile = "data.csv";
+
+    // CSV 파일 불러오기
+    loadCSV(csvFile);
+  </script>
+</body>
+</html>
