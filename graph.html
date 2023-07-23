@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPH</title>
+    <link rel="stylesheet" href="graph.css">
+</head>
+<body>
+    <header id="title">
+        밥몇끼?
+    </header>
+    <content>
+        <section id="days">
+            <form id="select">
+                <select id="day">
+                    <option value="MON">MON</option>
+                    <option value="TUE">TUE</option>
+                    <option value="WED">WED</option>
+                    <option value="THU">THU</option>
+                    <option value="FRI">FRI</option>
+                    <option value="SAT">SAT</option>
+                    <option value="SUN">SUN</option>
+                </select>
+                <div id="check">
+                    <div class="wrap">
+                        <input type="checkbox" value="breakfast" name="meal">아침
+                    </div>
+                    <div class="wrap">
+                        <input type="checkbox" value="lunch" name="meal">아점
+                    </div>
+                    <div class="wrap">
+                        <input type="checkbox" value="dinner" name="meal">점심
+                    </div>
+                    <div class="wrap">
+                        <input type="checkbox" value="brunch" name="meal">점저
+                    </div>
+                    <div class="wrap">
+                        <input type="checkbox" value="linner" name="meal">저녁
+                    </div>
+                    <div class="wrap">
+                        <input type="checkbox" value="night" name="meal">야식
+                    </div>
+                </div>
+                <button type="button" id="submit">EAT</button>
+            </form>
+            <div id="viewer">
+                <div id="donut_graph"><span class="center">0%</span></div>
+            </div>
+        </section>
+        <section id="week">
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">MON</div>
+            </div>
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">TUE</div>
+            </div>
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">WED</div>
+            </div>
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">THU</div>
+            </div>
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">FRI</div>
+            </div>
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">SAT</div>
+            </div>
+            <div class="wrap">
+                <div class="bar">
+                    <div class="bar_">
+                    </div>
+                    <div class="percentage">
+                    </div>
+                </div>
+                <div class="day">SUN</div>
+            </div>
+        </section>
+    </content>
+    <script src="graph.js"></script>
+</body>
+</html>
