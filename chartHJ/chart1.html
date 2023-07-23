@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chart</title>
+    <link rel="stylesheet" href="chart1.css">
+</head>
+<body>
+    <div>
+        <div class="progress-bar">           
+            <div id="progress" class="progress"></div>      
+        </div>
+        <div class="progress-bar1">
+            <div id="progress1" class="progress1"></div>
+        </div>
+        <div class="progress-bar2">
+            <div id="progress2" class="progress2"></div>
+        </div>
+    </div>
+    <div>
+        <input oninput='handleOnInput(this, 3)' id="number1" type="number"><br>
+        <input oninput='handleOnInput(this, 3)' id="number2" type="number"><br>
+        <input oninput='handleOnInput(this, 3)' id="number3" type="number"><br>
+        <button onclick="test()">입력</button>
+    </div>
+    <script src="chart1.js"></script>
+</body>
+</html>
