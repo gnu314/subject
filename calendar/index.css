@@ -1,0 +1,34 @@
+#tableWrap {
+  width: 1000px;
+  height: 800px;
+}
+
+#year,
+#month {
+  font-size: 30px;
+}
+
+.btn {
+  padding: 10px;
+  transform: translate(0, -5px);
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  filter: brightness(0.8);
+}
+
+#tableBody {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#firstLine {
+  background: lightyellow;
+  height: 20px;
+}
+
+.cell {
+  border: 1px solid black;
+}
