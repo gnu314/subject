@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <script defer src="index.js"></script>
+
+    <div>
+      <button id="yearMinus" class="btn">-</button>
+      <span id="year"></span>년
+      <button id="yearPlus" class="btn">+</button>
+    </div>
+    <div>
+      <button id="monthMinus" class="btn">-</button>
+      <span id="month"></span>월
+      <button id="monthPlus" class="btn">+</button>
+    </div>
+    <div id="fullWrap">
+      <div id="tableWrap">
+        <table id="tableBody"></table>
+      </div>
+      <div id="EventWrap">
+        <div><input id="eventDate" type="date" />년</div>
+        <div>이벤트 제목<input id="eventContent" type="text" /></div>
+        <button id="eventSubmit">제출</button>
+      </div>
+    </div>
+  </body>
+</html>
