@@ -88,8 +88,7 @@ function drawCalendar(year, month) {
         tdElement.classList.add("cell");
         tdElement.innerHTML = `${data2}<br />`;
       }
-      if (dateArr[5].length) tdElement.style.height = "16%";
-      else tdElement.style.height = "20%";
+      if (dateArr[5].length) tdElement.classList.add("line6");
 
       //이벤트를 지도에 그리는 부분
       drawEvent(tdElement, data2);
@@ -135,7 +134,7 @@ function drawEvent(tdElement, data2) {
 
     if (year == yearV && month == monthV && data2 == day) {
       const eventElement = document.createElement("span");
-      eventElement.innerHTML = `${data.content}`;
+      eventElement.innerHTML = `${data.content}<br />`;
       eventElement.style.height = 0;
       tdElement.appendChild(eventElement);
     }
