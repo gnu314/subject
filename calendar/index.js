@@ -107,10 +107,16 @@ function drawCalendar(year, month) {
 
   //날짜 넣기
   dateArr.forEach((data1) => {
+    console.log(dateArr);
     const trElement = document.createElement("tr");
     data1.forEach((data2) => {
       const tdElement = document.createElement("td");
       if (data2 != null) tdElement.classList.add("cell");
+      if (dateArr[5].length) {
+        tdElement.style.height = "16%";
+      } else {
+        tdElement.style.height = "20%";
+      }
       if (data2 != null) tdElement.innerHTML = `${data2}<br />`;
       //만약 캘린더를 그릴 때 해당 년, 월에 이벤트가 있을경우
       //해당 날짜에 이벤트 내용을 추가해서 렌더링
