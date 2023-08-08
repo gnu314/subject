@@ -137,9 +137,9 @@ border-left: 1px solid #333333;
 }
 
 .closebtn{
+    position: absolute;
     width: 20px;
     height: 20px;
-    position: absolute;
     top: 5%;
     right: 2%;
 }

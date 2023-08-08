@@ -1,4 +1,4 @@
-var date = new Date();
+let date = new Date();
 let day=[];
 const calendar = document.getElementById("main");
 
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (key.startsWith('content')) {
-            const dayIndex = parseInt(key.replace('content', ''));
-            day.push(dayIndex);
+            const dayindex = parseInt(key.replace('content', ''));
+            day.push(dayindex);
         }
     }
     renderCalendar();
 });
 
-//일정 작성 div 닫기
+//일정 작성 창 닫기
 function closebtn() {
     document.getElementById("schedule").style.display="none";
     if (calendar) {
@@ -23,7 +23,7 @@ function closebtn() {
     }
 }
 
-//일정 작성div esc로 닫기
+//일정 작성 창 esc로 닫기
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         closebtn();
@@ -150,8 +150,7 @@ function renderCalendar() {
     const today = new Date();
     if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
         for (let date of document.querySelectorAll('.this')) {
-            const todate= +date.innerHTML
-            if (today.getDate() === todate) {
+            if (today.getDate() === +date.innerHTML) {
                 date.classList.add('today');
                 break;
             }
@@ -168,20 +167,20 @@ function renderCalendar() {
     }
 }
 
+//이전 달
 function prevMonth() {
     date.setDate(1);
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
 }
-
+//이번 달
 function nextMonth() {
     date.setDate(1);
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
 }
-
+//다음 달
 function goToday(){
     date = new Date();
     renderCalendar();
 }
-
