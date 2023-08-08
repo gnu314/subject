@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#title{
+    font-size: 100px;
+}
+content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    #calendar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 50px;
+    }
+    #schedule{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #s_day{
+            width: 450px;
+            height: 150px;
+            font-size: 100px;
+            text-align: center;
+        }
+    }
+}
+#year{
+    font-size: 70px;
+}
+#month{
+    font-size: 50px;
+    margin-bottom: 20px;;
+    #left{
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        border-right: 30px solid black;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+    .month{
+        display: inline-block;
+    }
+    #right{
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        border-left: 30px solid black;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+}
+#cal{
+    display: flex;
+    flex-direction: column;
+    .day{
+        display: flex;
+        flex-direction: row;
+        div{
+            font-size: 20px;
+            width: 100px;
+            text-align: center;
+        }
+        div:nth-child(1){
+            color: red;
+        }
+        div:nth-child(7){
+            color: blue;
+        }
+    }
+    #date{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        div{
+            font-size: 10px;
+        }
+        div:nth-child(7n-6){
+            color: red;
+        }
+        div:nth-child(7n){
+            color: blue;
+        }
+        .previous{
+            flex: 100px;
+            height: 100px;
+            border: 3px solid black;
+            opacity: 0.33;
+        }
+        .now{
+            flex: 100px;
+            border: 3px solid black;
+            height: 100px;
+            cursor: pointer;
+            .schedule{
+                color: black;
+            }
+        }
+        .now.today{
+            flex: 100px;
+            border: 3px solid black;
+            height: 100px;
+            background-color: rgb(208, 226, 232);
+            cursor: pointer;
+        }
+        .later{
+            flex: 100px;
+            height: 100px;
+            border: 3px solid black;
+            opacity: 0.33;
+        }
+    }
+}
+

@@ -1,3 +1,4 @@
+
 let t;
 let t1;
 let t2;
@@ -26,6 +27,8 @@ function test() {
   const number1Value = parseInt(document.getElementById('number1').value);
   const number2Value = parseInt(document.getElementById('number2').value);
   const number3Value = parseInt(document.getElementById('number3').value);
+
+  console.log(number1Value)
 
   totalMinwon[0] = number1Value;
   totalMinwon[1] = number2Value;
