@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>calendar</title>
+  </head>
+  <body>
+    <div id="calendar_background">
+      <div id="calendar_area">
+        <div id="title_box">
+          <button
+            type="button"
+            id="month_prev"
+            class="month_move"
+            onclick="decreaseMonth()"
+          >
+            <div id="left_arrow"></div>
+          </button>
+          <span id="this_month"></span>
+          <button
+            type="button"
+            id="month_next"
+            class="month_move"
+            onclick="increaseMonth()"
+          >
+            <div id="right_arrow"></div>
+          </button>
+        </div>
+        <div id="calendar_box">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="color: red">일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th style="color: blue">토</th>
+              </tr>
+            </thead>
+            <tbody id="table_body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="schedule">
+        <div id="input_box">
+          <input
+            id="input_date"
+            type="text"
+            placeholder="날짜를 클릭하세요"
+            disabled
+            required
+          />
+          <button onclick="add_schedule()">입력</button>
+        </div>
+        <textarea id="input_detail" draggable="false" required></textarea>
+        <div id="schedule_list"></div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
