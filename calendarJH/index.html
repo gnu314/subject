@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>달력 예제</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="calendar">
+      <div class="controls">
+        <button id="prevBtn">&lt;</button>
+        <h2 id="month-year"></h2>
+        <button id="nextBtn">&gt;</button>
+      </div>
+      <table>
+          <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+          </tr>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+    <div class="event-form">
+      <h2>일정 추가</h2>
+      <form>
+        <span id="event-date-display"></span>
+        <br>
+        <label for="event">일정 내용:</label>
+        <input type="text" id="event">
+        <button type="submit">추가</button>
+      </form>
+    </div>
+    <div class="lists">
+      <h2>일정 목록</h2>
+      <ul id="event-list"></ul>
+    </div>
+  </div>
+        <script src="index.js"></script>
+</body>
+</html>
