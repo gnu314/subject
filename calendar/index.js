@@ -46,20 +46,58 @@ mpBtn.addEventListener("click", () => {
   }
 });
 
-//함수 정의 부
-function setInit() {
-  setYearV();
-  setMonthV();
+//이벤트 관련
+const dateInput = document.getElementById("eventDate");
+const eventContent = document.getElementById("eventContent");
+const eventSbmBtn = document.getElementById("eventSubmit");
 
+eventSbmBtn.addEventListener("click", () => {
+  const date = dateInput.value;
+  const content = eventContent.value;
+  eventList.push({ date, content });
+  //{date: '2023-08-02', content: '적당한 이벤트 이름'}
   drawCalendar(yearV, monthV);
-}
+});
 
-function setYearV() {
-  document.getElementById("year").innerHTML = yearV;
-}
-function setMonthV() {
-  if (monthV < 10) document.getElementById("month").innerHTML = `0${monthV}`;
-  else document.getElementById("month").innerHTML = `${monthV}`;
+//함수 정의 부
+function drawCalendar(year, month) {
+  const table = document.getElementById("tableBody");
+  table.innerHTML = "";
+
+  const dateArr = getDateArr(year, month);
+
+  //컬럼 만들기
+  const column = document.createElement("tr");
+  column.setAttribute("id", "firstLine");
+  for (i = 0; i <= 6; i++) {
+    const tag = ["일", "월", "화", "수", "목", "금", "토"];
+    const columnTd = document.createElement("td");
+    columnTd.innerHTML = tag[i];
+    column.appendChild(columnTd);
+  }
+  table.appendChild(column);
+
+  //날짜 넣기
+  dateArr.forEach((data1) => {
+    //tr만드는 부분
+    const trElement = document.createElement("tr");
+    data1.forEach((data2) => {
+      //td만드는 부분
+      const tdElement = document.createElement("td");
+      if (data2 != null) {
+        tdElement.classList.add("cell");
+        tdElement.innerHTML = `${data2}<br />`;
+      }
+      if (dateArr[5].length) tdElement.style.height = "16%";
+      else tdElement.style.height = "20%";
+
+      //이벤트를 지도에 그리는 부분
+      drawEvent(tdElement, data2);
+
+      trElement.appendChild(tdElement);
+    });
+    table.appendChild(trElement);
+  });
 }
 
 function getDateArr(year, month) {
@@ -83,75 +121,38 @@ function getDateArr(year, month) {
   //  [13, 14, 15, 16, 17, 18, 19]
   //  [20, 21, 22, 23, 24, 25, 26]
   //  [27, 28, 29, 30, 31]
+  //  []
   //]
   return result;
 }
 
-function drawCalendar(year, month) {
-  const table = document.getElementById("tableBody");
-  table.innerHTML = "";
+//이벤트 그리는 함수
+function drawEvent(tdElement, data2) {
+  eventList.forEach((data) => {
+    const year = Number(data.date.substr(0, 4));
+    const month = Number(data.date.substr(5, 2));
+    const day = Number(data.date.substr(8, 2));
 
-  const dateArr = getDateArr(year, month);
-
-  //컬럼 만들기
-  const column = document.createElement("tr");
-  column.setAttribute("id", "firstLine");
-
-  for (i = 0; i <= 6; i++) {
-    const tag = ["일", "월", "화", "수", "목", "금", "토"];
-    const columnTd = document.createElement("td");
-    columnTd.innerHTML = tag[i];
-    column.appendChild(columnTd);
-  }
-  table.appendChild(column);
-
-  //날짜 넣기
-  dateArr.forEach((data1) => {
-    console.log(dateArr);
-    const trElement = document.createElement("tr");
-    data1.forEach((data2) => {
-      const tdElement = document.createElement("td");
-      if (data2 != null) tdElement.classList.add("cell");
-
-      if (dateArr[5].length) tdElement.style.height = "16%";
-      else tdElement.style.height = "20%";
-
-      if (data2 != null) tdElement.innerHTML = `${data2}<br />`;
-      //만약 캘린더를 그릴 때 해당 년, 월에 이벤트가 있을경우
-      //해당 날짜에 이벤트 내용을 추가해서 렌더링
-
-      //렌더링 할 때 날짜를 돌면서
-      //해당 날짜에 이벤트를 확인하고 있을경우
-      //해당 칸에 div를 추가하는 형식
-      eventList.forEach((data, i) => {
-        const year = Number(data.date.substr(0, 4));
-        const month = Number(data.date.substr(5, 2));
-        const day = Number(data.date.substr(8, 2));
-
-        if (year == yearV && month == monthV && data2 == day) {
-          const eventElement = document.createElement("span");
-          eventElement.innerHTML = `${data.content}`;
-          eventElement.style.height = 0;
-          tdElement.appendChild(eventElement);
-        }
-      });
-
-      trElement.appendChild(tdElement);
-    });
-    table.appendChild(trElement);
+    if (year == yearV && month == monthV && data2 == day) {
+      const eventElement = document.createElement("span");
+      eventElement.innerHTML = `${data.content}`;
+      eventElement.style.height = 0;
+      tdElement.appendChild(eventElement);
+    }
   });
 }
 
-//이벤트 관련
+function setInit() {
+  setYearV();
+  setMonthV();
 
-const dateInput = document.getElementById("eventDate");
-const eventContent = document.getElementById("eventContent");
-const eventSbmBtn = document.getElementById("eventSubmit");
-
-eventSbmBtn.addEventListener("click", () => {
-  const date = dateInput.value;
-  const content = eventContent.value;
-  eventList.push({ date, content });
-  //{date: '2023-08-02', content: 'fw'}
   drawCalendar(yearV, monthV);
-});
+}
+
+function setYearV() {
+  document.getElementById("year").innerHTML = yearV;
+}
+function setMonthV() {
+  if (monthV < 10) document.getElementById("month").innerHTML = `0${monthV}`;
+  else document.getElementById("month").innerHTML = `${monthV}`;
+}
