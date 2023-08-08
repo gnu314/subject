@@ -123,27 +123,26 @@ function renderCalendar() {
 
     //배열 합치기(달력에 출력될 배열)
     const dates = prevDates.concat(thisDates, nextDates);
-
     const firstDateIndex = dates.indexOf(1);
     const lastDateIndex = dates.lastIndexOf(TLDate);
-     
+
     dates.forEach((date, i) => {
-      let condition
-      if(i >= firstDateIndex && i <= lastDateIndex)
-      {
+    let condition
+    if(i >= firstDateIndex && i <= lastDateIndex)
+    {
         condition='this';
-      }
-      else
-      {
+    }
+    else
+    {
         condition='other';
-      }
-  
-      dates[i] =`<div class="date" onclick='Schedule(this.id)' id=${viewYear}${viewMonth + 1}${date}>
-                <span class="${condition}">${date}</span>
-                <div class="wrap">
-                <div class="plan${viewYear}${viewMonth + 1}${date}" id="plan${viewYear}${viewMonth + 1}${date}"></div>
-                </div>
-                </div>`;
+    }
+    
+    dates[i] =`<div class="date" onclick='Schedule(this.id)' id=${viewYear}${viewMonth + 1}${date}>
+            <span class="${condition}">${date}</span>
+            <div class="wrap">
+            <div class="plan${viewYear}${viewMonth + 1}${date}" id="plan${viewYear}${viewMonth + 1}${date}"></div>
+            </div>
+            </div>`;
     })
     document.querySelector('.dates').innerHTML = dates.join('');
 
@@ -158,13 +157,13 @@ function renderCalendar() {
     }
 
     //달력 나올때 저장되어 있던 일정 출력
-    for (let savedDay of day) {
+    day.forEach(savedDay => {
         const title = localStorage.getItem(`content${savedDay}`);
         const planElement = document.getElementById(`plan${savedDay}`);
         if (planElement) {
             planElement.textContent = title;
         }
-    }
+    });
 }
 
 //이전 달
