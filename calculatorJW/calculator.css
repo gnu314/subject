@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid black;
+  width: 300px;
+  height: 400px;
+}
+#calculator #result {
+  border: 3px solid black;
+  height: 22%;
+  width: 90%;
+  margin: 5% 0 5%;
+}
+#calculator #result #procedure {
+  height: 50%;
+  border: 3px solid blue;
+}
+#calculator #result #answer {
+  height: 50%;
+  border: 3px solid red;
+}
+#calculator #button {
+  width: 90%;
+  height: 65%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+#calculator #button .line {
+  height: 20%;
+  margin-bottom: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#calculator #button .line .number {
+  width: 14%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#calculator #button .line .cal {
+  width: 14%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}/*# sourceMappingURL=calculator.css.map */

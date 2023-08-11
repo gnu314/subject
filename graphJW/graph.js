@@ -1,6 +1,6 @@
 const Day = document.getElementById("day");
 const mealCheck = document.getElementsByName("meal");
-const Button = document.getElementById("submit");
+const Button = document.getElementById("submit"); // 이름 Submit으로
 const Center = document.getElementsByClassName("center")[0];
 
 Button.addEventListener('click',function(){
@@ -38,21 +38,21 @@ Button.addEventListener('click',function(){
     }
 
     const colorFn = (i, classname, color) => {
-        classname.style.background = "conic-gradient(" + color + " 0% " + i + "%, #dedede " + i + "% 100%)";
+        classname.style.background = "conic-gradient(" + color + " 0% " + i + "%, #dedede " + i + "% 100%)"; // 백틱으로 처리
     }
 
-    const Day_ = document.getElementsByClassName("day");
+    const option = document.getElementsByTagName("option");
     const Bar = document.getElementsByClassName("bar_");
     const Percentage_ = document.getElementsByClassName("percentage");
 
     const colorFn_ = (t) => {
-        for(k=0; k<7; k++){
-            if(Day.value === Day_[k].innerHTML){
-                Bar[k].style = "width: 30px; background-color: black; height:" + t + "px";
+            if(Day[k]){
+                Bar[k].style = "width: 30px; background-color: black; height:" + t + "%";   //백틱으로 처리
                 Percentage_[k].innerHTML = templateHTML(percentage);
             }
-        }
-    }
+        
+    } // innerHTML 값을 상수로 사용하면 위험함(화면에 있는 값)
 
     makeChart(percentage, Donut, '#000');
 })
+//Day.value && Day_[k]

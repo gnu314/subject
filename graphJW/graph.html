@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="graph.css">
 </head>
 <body>
+    <script defer src="graph.js"></script>
     <header id="title">
         밥몇끼?
     </header>
@@ -14,17 +15,17 @@
         <section id="days">
             <form id="select">
                 <select id="day">
-                    <option value="MON">MON</option>
-                    <option value="TUE">TUE</option>
-                    <option value="WED">WED</option>
-                    <option value="THU">THU</option>
-                    <option value="FRI">FRI</option>
-                    <option value="SAT">SAT</option>
-                    <option value="SUN">SUN</option>
+                    <option value="0">MON</option>
+                    <option value="1">TUE</option>
+                    <option value="2">WED</option>
+                    <option value="3">THU</option>
+                    <option value="4">FRI</option>
+                    <option value="5">SAT</option>
+                    <option value="6">SUN</option>
                 </select>
                 <div id="check">
                     <div class="wrap">
-                        <input type="checkbox" value="breakfast" name="meal">아침
+                        <input type="checkbox" value="breakfast" name="meal">아침 
                     </div>
                     <div class="wrap">
                         <input type="checkbox" value="lunch" name="meal">아점
@@ -65,7 +66,7 @@
                     <div class="percentage">
                     </div>
                 </div>
-                <div class="day">TUE</div>
+                <div class="day" value="TUE">TUE</div>
             </div>
             <div class="wrap">
                 <div class="bar">
@@ -74,7 +75,7 @@
                     <div class="percentage">
                     </div>
                 </div>
-                <div class="day">WED</div>
+                <div class="day" value="WED">WED</div>
             </div>
             <div class="wrap">
                 <div class="bar">
@@ -83,7 +84,7 @@
                     <div class="percentage">
                     </div>
                 </div>
-                <div class="day">THU</div>
+                <div class="day" value="THU">THU</div>
             </div>
             <div class="wrap">
                 <div class="bar">
@@ -92,7 +93,7 @@
                     <div class="percentage">
                     </div>
                 </div>
-                <div class="day">FRI</div>
+                <div class="day" value="FRI">FRI</div>
             </div>
             <div class="wrap">
                 <div class="bar">
@@ -101,7 +102,7 @@
                     <div class="percentage">
                     </div>
                 </div>
-                <div class="day">SAT</div>
+                <div class="day" value="SAT">SAT</div>
             </div>
             <div class="wrap">
                 <div class="bar">
@@ -110,10 +111,9 @@
                     <div class="percentage">
                     </div>
                 </div>
-                <div class="day">SUN</div>
+                <div class="day" value="SUN">SUN</div>
             </div>
         </section>
     </content>
-    <script src="graph.js"></script>
 </body>
 </html>
