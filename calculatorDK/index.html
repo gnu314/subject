@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="out_line">
+      <div id="view_box">
+        <input class="view" id="formula" disabled />
+        <input class="view" id="result" disabled />
+      </div>
+      <div id="input_box">
+        <div class="calculate" id="divide" onclick="calculate('/')">/</div>
+        <div class="calculate" id="clear_entry" onclick="clear_entry()">CE</div>
+        <div class="calculate" id="clear" onclick="clear_result()">C</div>
+        <div class="calculate" id="backspace" onclick="back_space()">←</div>
+        <div class="number" onclick="number('7')">7</div>
+        <div class="number" onclick="number('8')">8</div>
+        <div class="number" onclick="number('9')">9</div>
+        <div class="calculate" id="multiply" onclick="calculate('*')">X</div>
+        <div class="number" onclick="number('4')">4</div>
+        <div class="number" onclick="number('5')">5</div>
+        <div class="number" onclick="number('6')">6</div>
+        <div class="calculate" id="minus" onclick="calculate('-')">-</div>
+        <div class="number" onclick="number('1')">1</div>
+        <div class="number" onclick="number('2')">2</div>
+        <div class="number" onclick="number('3')">3</div>
+        <div class="calculate" id="plus" onclick="calculate('+')">+</div>
+        <div class="number" id="zero" onclick="number('0')">0</div>
+        <div class="number" id="comma" onclick="number('.')">.</div>
+        <div class="calculate" id="equal" onclick="calculate('=')">=</div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
