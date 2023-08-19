@@ -19,11 +19,10 @@ opBtnArr.forEach((btn) => {
     switch (e.target.value) {
       case "back":
         resultArr.pop();
-        if (resultArr.length == 0) resultArr.push(0);
         renderResult();
         break;
       case "clear":
-        resultArr = [0];
+        resultArr = [];
         renderResult();
         break;
       case "=":
@@ -48,11 +47,6 @@ function renderError() {
   }, 1000);
 }
 
-/**
- *
- * @param {boolean} equal equal 버튼을 클릭했는가?
- * @returns
- */
 function renderResult(equal) {
   if (resultArr.length == 0) {
     resultBox.innerHTML = 0;
