@@ -105,3 +105,4 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 prevBtn.addEventListener('click', prevMonth);
 nextBtn.addEventListener('click', nextMonth);
+
