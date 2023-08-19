@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#calculator{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    width: 300px;
+    height: 400px;
+    #result{
+        border: 3px solid black;
+        height: 22%;
+        width: 90%;
+        margin: 5% 0 5%;
+        #procedure{
+            height: 50%;
+            border: 3px solid blue;
+        }
+        #answer{
+            height: 50%;
+            border: 3px solid red;
+        }
+    }
+    #button{
+        width: 90%;
+        height: 65%;
+        display: flex;
+        flex-direction: column-reverse;
+        .line{
+            height: 20%;
+            margin-bottom: 3px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            .number{
+                width: 14%;
+                border: 3px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            .cal{
+                width: 14%;
+                border: 3px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+    }
+}

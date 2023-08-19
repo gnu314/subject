@@ -101,23 +101,17 @@ const date_ = document.getElementById("date");
 
 schedule.innerHTML = `${t_month+1}/${t_date}`
 
+let choice = null;
+const submit = document.getElementsByTagName('input')[1];
+const text = document.getElementsByTagName('input')[0];
+let el = document.createElement('div');
+
 date_.addEventListener('click',function(e){
     schedule.innerHTML = `${t_month+1+n-p}/${e.target.innerHTML}`;
-    const submit = document.getElementsByTagName('input')[1];
-    const text = document.getElementsByTagName('input')[0];
-    const choice = e.target;
-
-    const el = document.createElement('div');
-    el.innerHTML = `<div class="schedule">${text.value}</div>`;
-    submit.addEventListener('click',()=>{
-        choice.appendChild(el);
-    })
+    choice = e.target;
 });
 
-
-
-
-
-
-
-
+submit.addEventListener('click',()=>{
+    el.innerHTML = `<div class="schedule">${text.value}</div>`;
+    choice.appendChild(el);
+})

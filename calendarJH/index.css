@@ -1,0 +1,47 @@
+body{
+    display : flex;
+    justify-content: space-around;
+}
+.calendar-container {
+    display: flex;
+    justify-content: space-between;
+  }  
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+.controls button {
+    background: none; /*색 없애기*/
+    border: none;       /*선 없애기*/
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+  }
+table {
+    width: 100%;
+    border-collapse: collapse;  /*띄워져있는 것을 붙임*/  
+}
+  
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+  }
+th {
+    background-color: #f2f2f2;
+  }
+td {
+    cursor: pointer;
+  }
+#month-year {
+    text-align: center;
+  }  
+  .event-form input {
+    width: 50%;
+  }
+#event-date-display{
+    font-size: xx-large;
+}
